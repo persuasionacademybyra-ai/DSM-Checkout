@@ -50,8 +50,8 @@ body::before {
 .amb { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
 .amb1 { width: 480px; height: 480px; top: -80px; right: -60px; background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%); animation: d1 22s ease-in-out infinite; }
 .amb2 { width: 380px; height: 380px; bottom: 20%; left: -70px; background: radial-gradient(circle, rgba(40,80,180,0.05) 0%, transparent 70%); animation: d2 28s ease-in-out infinite; }
-@keyframes d1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-18px,26px)} }
-@keyframes d2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(18px,-18px)} }
+@frames d1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-18px,26px)} }
+@frames d2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(18px,-18px)} }
 
 /* ════════════════════════════════════
    CHECKOUT NAV — minimal, purposeful
@@ -723,13 +723,13 @@ function handlePayment() {
   if (!name)  { alert('Please enter your full name.'); document.getElementById('f-name').focus(); return; }
   if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); document.getElementById('f-email').focus(); return; }
   const options = {
-    key: 'YOUR_RAZORPAY_KEY_ID',
+    key: 'rzp_live_SfTLpChVAjTqTe',
     amount: 99900, currency: 'INR',
     name: 'Persuasion Academy by RA',
     description: 'Social Dynamics Masterclass — Lifetime Access',
     image: '',
     prefill: { name, email, contact: phone },
-    notes: { product: 'Social Dynamics Masterclass' },
+    notes: { product: 'Social Dynamics Masterclass', name: name },
     theme: { color: '#C9A84C' },
     handler: function(response) { window.location.href = 'success.html?payment_id=' + response.razorpay_payment_id; },
     modal: { ondismiss: function() {} }
