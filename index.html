@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Your Access — Social Dynamics Masterclass · Persuasion Academy by RA</title>
+<meta name="description" content="13 research-backed modules on the documented psychology of social influence, personal presence, and relationship dynamics. One-time payment. Instant access. ₹999.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:           #060C18;
+  --ink2:          #0A1020;
+  --ink3:          #0E1628;
+  --ink4:          #131E34;
+  --gold:          #C9A84C;
+  --gold2:         #F0DC9A;
+  --gold3:         #A07830;
+  --white:         #FFFFFF;
+  --muted:         #94AAC8;
+  --dimmed:        #5A7498;
+  --faint:         rgba(201,168,76,0.06);
+  --border:        rgba(201,168,76,0.13);
+  --border-bright: rgba(201,168,76,0.32);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── PROGRESS BAR ── */
+#progress-track { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 3px; background: rgba(201,168,76,0.07); }
+#progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2)); width: 0%; box-shadow: 0 0 10px rgba(201,168,76,0.5); transition: width 0.1s linear; }
+
+/* ── GRID TEXTURE ── */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(201,168,76,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 40%, black 30%, transparent 100%);
+}
+
+/* ── AMBIENT LIGHT ── */
+.amb { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+.amb1 { width: 480px; height: 480px; top: -80px; right: -60px; background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%); animation: d1 22s ease-in-out infinite; }
+.amb2 { width: 380px; height: 380px; bottom: 20%; left: -70px; background: radial-gradient(circle, rgba(40,80,180,0.05) 0%, transparent 70%); animation: d2 28s ease-in-out infinite; }
+@keyframes d1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-18px,26px)} }
+@keyframes d2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(18px,-18px)} }
+
+/* ════════════════════════════════════
+   CHECKOUT NAV — minimal, purposeful
+════════════════════════════════════ */
+.co-nav {
+  position: fixed; top: 3px; left: 0; right: 0; z-index: 100;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; padding: 0 48px; height: 54px;
+  background: rgba(6,12,24,0.93);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-back {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--dimmed); text-decoration: none; transition: color 0.2s; justify-self: start;
+}
+.nav-back:hover { color: var(--gold); }
+.nav-back svg { width: 13px; height: 13px; }
+.nav-brand {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none; justify-self: center;
+}
+.nav-secure {
+  display: flex; align-items: center; gap: 6px; justify-self: end;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dimmed);
+}
+.nav-secure svg { width: 11px; height: 11px; }
+
+/* ════════════════════════════════════
+   STEPS BAR — signals "purchase flow"
+════════════════════════════════════ */
+.steps-bar {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center; gap: 0;
+  padding: 0 40px; height: 46px; margin-top: 57px;
+  background: var(--ink2); border-bottom: 1px solid var(--border);
+}
+.step { display: flex; align-items: center; gap: 8px; padding: 0 22px; height: 100%; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dimmed); }
+.step.done { color: var(--muted); }
+.step.active { color: var(--gold); }
+.step-num { width: 19px; height: 19px; border-radius: 50%; border: 1px solid currentColor; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+.step.done .step-num { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.35); color: var(--gold); }
+.step.active .step-num { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.step-line { width: 28px; height: 1px; background: var(--border); flex-shrink: 0; }
+
+/* ════════════════════════════════════
+   MAIN GRID
+════════════════════════════════════ */
+.co-wrap {
+  position: relative; z-index: 1; max-width: 1080px; margin: 0 auto;
+  padding: 44px 40px 80px;
+  display: grid; grid-template-columns: 1fr 388px; gap: 36px; align-items: start;
+}
+
+/* ════════════════════════════════════
+   LEFT COLUMN
+════════════════════════════════════ */
+.co-left { display: flex; flex-direction: column; }
+
+/* ─ Product Confirmation block ─ */
+.prod-confirm {
+  border: 1px solid var(--border); border-top: 2px solid var(--gold);
+  background: linear-gradient(160deg, rgba(14,20,38,0.7), rgba(8,14,28,0.5));
+  padding: 30px 32px 26px; margin-bottom: 2px;
+}
+.pc-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.75; margin-bottom: 14px; }
+.pc-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 12px; }
+.pc-title em { font-style: italic; color: var(--gold); }
+.pc-sub { font-family: 'Source Serif 4', serif; font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; max-width: 520px; }
+.pc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pc-item { display: flex; align-items: flex-start; gap: 10px; padding: 13px 15px; background: rgba(8,12,24,0.6); border: 1px solid var(--border); border-left: 2px solid rgba(201,168,76,0.35); }
+.pc-dot { color: var(--gold); font-size: 8px; flex-shrink: 0; margin-top: 5px; }
+.pc-text { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--muted); line-height: 1.55; }
+.pc-text strong { color: var(--white); font-weight: 600; }
+
+/* ─ Stats strip ─ */
+.stats-strip { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid var(--border); border-top: none; margin-bottom: 24px; background: var(--faint); }
+.ss { padding: 16px 8px; text-align: center; border-right: 1px solid var(--border); }
+.ss:last-child { border-right: none; }
+.ss-n { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 6px; text-shadow: 0 0 18px rgba(201,168,76,0.28); }
+.ss-l { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dimmed); }
+
+/* ─ How it works ─ */
+.how-block { border: 1px solid var(--border); margin-bottom: 2px; }
+.block-head { padding: 16px 24px; background: rgba(10,16,28,0.7); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.bh-line { width: 24px; height: 2px; background: var(--gold); flex-shrink: 0; }
+.bh-text { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.how-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+.how-col { padding: 24px 26px; border-right: 1px solid var(--border); }
+.how-col:last-child { border-right: none; }
+.how-n { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800; color: rgba(201,168,76,0.1); line-height: 1; margin-bottom: 12px; }
+.how-lbl { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 9px; }
+.how-desc { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+.fit-block { border: 1px solid var(--border); border-top: none; margin-bottom: 24px; }
+.fit-header { padding: 16px 24px; background: rgba(8,14,26,0.8); border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dimmed); }
+.fit-cols { display: grid; grid-template-columns: 1fr 1fr; }
+.fit-col { padding: 20px 22px; }
+.fit-col:first-child { border-right: 1px solid var(--border); }
+.fit-lbl { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+.fit-lbl.yes { color: rgba(90,190,110,0.85); }
+.fit-lbl.no  { color: rgba(200,75,55,0.75); }
+.fit-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+.fit-icon { font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+.fit-text { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+/* ─ FAQ ─ */
+.faq-wrap { margin-bottom: 28px; }
+.faq-head { padding: 16px 24px; background: var(--ink2); border: 1px solid var(--border); border-bottom: none; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dimmed); }
+.faq-list { border: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; cursor: pointer; font-size: 15px; font-weight: 600; color: var(--white); transition: color 0.2s; gap: 16px; user-select: none; line-height: 1.4; }
+.faq-q:hover { color: var(--gold2); }
+.faq-icon { font-size: 20px; color: var(--gold); flex-shrink: 0; transition: transform 0.3s; line-height: 1; font-weight: 300; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { font-family: 'Source Serif 4', serif; font-size: 15px; color: var(--muted); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; padding: 0 24px; }
+.faq-item.open .faq-a { max-height: 240px; padding: 0 24px 18px; }
+
+.legal { display: flex; gap: 18px; flex-wrap: wrap; }
+.legal a { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dimmed); text-decoration: none; transition: color 0.2s; border-bottom: 1px solid rgba(90,116,152,0.28); padding-bottom: 2px; }
+.legal a:hover { color: var(--gold2); }
+
+/* ════════════════════════════════════
+   RIGHT COLUMN — PAYMENT CARD
+════════════════════════════════════ */
+.co-right { display: flex; flex-direction: column; gap: 0; }
+
+/* Sticky wrapper holds pay-card + trust + guarantee together — fixes overlap bug */
+.co-right-sticky {
+  position: sticky; top: 112px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.pay-card {
+  background: linear-gradient(160deg, rgba(14,22,44,0.88), rgba(6,12,24,0.92));
+  border: 1px solid var(--border-bright);
+  position: relative;
+  box-shadow: 0 0 60px rgba(0,0,0,0.5), inset 0 0 40px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.pay-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold3) 20%, var(--gold) 40%, var(--gold2) 50%, var(--gold) 60%, var(--gold3) 80%, transparent);
+}
+
+.card-head { padding: 24px 28px 20px; border-bottom: 1px solid rgba(201,168,76,0.09); }
+.card-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 10px; }
+.card-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.card-ico { width: 40px; height: 40px; flex-shrink: 0; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.22); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.card-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; color: var(--white); line-height: 1.2; }
+.card-sub { font-size: 12px; color: var(--dimmed); margin-top: 2px; letter-spacing: 0.03em; }
+.card-includes { display: flex; flex-direction: column; gap: 5px; padding-top: 12px; border-top: 1px solid rgba(201,168,76,0.08); }
+.ci-row { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.ci-check { color: var(--gold); font-size: 11px; flex-shrink: 0; }
+
+.card-price { padding: 20px 28px 16px; border-bottom: 1px solid rgba(201,168,76,0.07); }
+.price-row { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+.price-big { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 800; color: var(--white); line-height: 1; }
+.price-big sup { font-size: 22px; vertical-align: super; color: var(--gold); }
+.price-was { font-size: 17px; color: var(--dimmed); text-decoration: line-through; }
+.price-badge { display: inline-flex; align-items: center; background: rgba(180,50,40,0.1); border: 1px solid rgba(180,50,40,0.24); color: #d47060; font-size: 10px; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; padding: 3px 10px; margin-bottom: 6px; }
+.price-note { font-size: 13px; color: var(--dimmed); }
+
+.card-form { padding: 20px 28px; }
+.fg { margin-bottom: 13px; }
+.fl { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dimmed); margin-bottom: 6px; }
+.fi {
+  width: 100%; padding: 12px 14px;
+  background: rgba(4,9,20,0.85); border: 1px solid rgba(201,168,76,0.17);
+  color: var(--white); font-family: 'Barlow', sans-serif; font-size: 16px;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none; border-radius: 0;
+}
+.fi::placeholder { color: var(--dimmed); opacity: 0.45; }
+.fi:focus { border-color: rgba(201,168,76,0.48); box-shadow: 0 0 0 3px rgba(201,168,76,0.06); }
+
+.pay-btn {
+  width: 100%; margin-top: 8px;
+  background: linear-gradient(135deg, #C9A84C 0%, #F0DC9A 50%, #C9A84C 100%);
+  background-size: 200% auto; color: var(--ink);
+  font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  border: none; padding: 18px 20px; cursor: pointer;
+  transition: background-position 0.4s, box-shadow 0.4s, transform 0.15s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+.pay-btn:hover { background-position: right center; box-shadow: 0 0 32px rgba(201,168,76,0.48), 0 0 70px rgba(201,168,76,0.12); transform: translateY(-1px); }
+.pay-btn:active { transform: translateY(0); }
+.access-note { font-size: 13px; color: var(--dimmed); text-align: center; margin-top: 10px; font-style: italic; font-family: 'Source Serif 4', serif; }
+
+.card-methods { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; justify-content: center; padding: 12px 28px 20px; }
+.meth { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dimmed); }
+.meth-dot { color: rgba(201,168,76,0.28); }
+
+/* Trust */
+.trust-stack { display: flex; flex-direction: column; gap: 8px; }
+.trust-row { display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px; background: rgba(8,14,26,0.75); border: 1px solid var(--border); border-left: 2px solid rgba(201,168,76,0.22); }
+.trust-ico { font-size: 16px; flex-shrink: 0; line-height: 1.5; }
+.trust-txt { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--muted); line-height: 1.55; }
+.trust-txt strong { color: var(--white); font-weight: 600; }
+
+/* Guarantee */
+.guar { border: 1px solid rgba(201,168,76,0.2); border-top: 2px solid var(--gold); background: rgba(201,168,76,0.03); padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+.g-ico { font-size: 22px; flex-shrink: 0; line-height: 1.1; }
+.g-title { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.g-body { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--muted); line-height: 1.65; }
+.g-body strong { color: var(--white); }
+
+/* ════════════════════════════════════
+   PROGRAMME OVERVIEW — below fold
+════════════════════════════════════ */
+.prog-section { position: relative; z-index: 1; padding: 60px 40px; background: rgba(8,14,26,0.8); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.prog-inner { max-width: 1080px; margin: 0 auto; }
+.sec-eye { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.sec-eye-line { width: 28px; height: 2px; background: var(--gold); }
+.sec-eye-text { font-size: 11px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); }
+.sec-hl { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.8vw, 34px); font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 32px; }
+.sec-hl em { font-style: italic; color: var(--gold); }
+
+.modules-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(201,168,76,0.05); }
+.mod-card { background: var(--ink3); padding: 28px 26px; border: 1px solid rgba(201,168,76,0.07); transition: background 0.22s, border-color 0.22s; }
+.mod-card:hover { background: var(--ink4); border-color: rgba(201,168,76,0.18); }
+.mod-phase { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); opacity: 0.6; margin-bottom: 10px; display: flex; align-items: center; gap: 7px; }
+.mod-phase::before { content: ''; width: 16px; height: 1px; background: currentColor; opacity: 0.6; }
+.mod-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; color: var(--white); line-height: 1.25; margin-bottom: 9px; }
+.mod-title em { font-style: italic; color: var(--gold); }
+.mod-desc { font-family: 'Source Serif 4', serif; font-size: 14px; color: var(--muted); line-height: 1.65; }
+@media (min-width: 901px) { .mod-last { grid-column: 2; } }
+
+/* ════════════════════════════════════
+   SOCIAL PROOF
+════════════════════════════════════ */
+.proof-section { position: relative; z-index: 1; padding: 52px 40px; background: var(--ink2); border-bottom: 1px solid var(--border); }
+.proof-inner { max-width: 1080px; margin: 0 auto; }
+.proof-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); margin-top: 28px; }
+.proof-card { background: var(--ink3); padding: 28px 26px; }
+.proof-q { font-family: 'Source Serif 4', serif; font-size: 15px; font-style: italic; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+.proof-attr { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dimmed); padding-top: 14px; border-top: 1px solid var(--border); }
+.proof-attr span { color: var(--gold); }
+
+/* ════════════════════════════════════
+   FOOTER
+════════════════════════════════════ */
+.co-footer { position: relative; z-index: 1; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--border); }
+.foot-brand { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); opacity: 0.55; }
+.foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.foot-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--dimmed); text-decoration: none; transition: color 0.2s; }
+.foot-links a:hover { color: var(--gold2); }
+.foot-copy { font-size: 11px; color: var(--dimmed); opacity: 0.45; }
+.foot-compliance { width: 100%; font-size: 11px; color: var(--dimmed); opacity: 0.5; line-height: 1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px; }
+.foot-compliance a { color: var(--dimmed); text-decoration: underline; transition: color 0.2s; }
+.foot-compliance a:hover { color: var(--gold2); }
+
+/* ════ MOBILE FLOATING CTA ════ */
+#mob-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: rgba(4,8,18,0.97); border-top: 1px solid rgba(201,168,76,0.22); padding: 10px 14px; }
+#mob-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 15px; width: 100%; background: linear-gradient(135deg, #C9A84C, #F0DC9A, #C9A84C); background-size: 200% auto; color: var(--ink); font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; }
+#mob-cta.show { display: block; }
+
+/* ════ RESPONSIVE ════ */
+@media (max-width: 900px) {
+  .co-nav { padding: 0 18px; }
+  .co-nav-secure, .nav-secure { display: none; }
+  .steps-bar { display: none; }
+  .co-wrap { grid-template-columns: 1fr; padding: 20px 14px 100px; gap: 18px; }
+  .co-right { order: -1; }
+  .co-right-sticky { position: static; }
+  .pay-card { position: static; }
+  .pc-grid { grid-template-columns: 1fr; }
+  .stats-strip { grid-template-columns: repeat(2,1fr); }
+  .ss { border-right: none; border-bottom: 1px solid var(--border); }
+  .ss:nth-child(odd) { border-right: 1px solid var(--border); }
+  .ss:nth-last-child(-n+2) { border-bottom: none; }
+  .how-cols { grid-template-columns: 1fr; }
+  .how-col { border-right: none; border-bottom: 1px solid var(--border); }
+  .how-col:last-child { border-bottom: none; }
+  .fit-cols { grid-template-columns: 1fr; }
+  .fit-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  .prog-section { padding: 44px 14px; }
+  .modules-grid { grid-template-columns: 1fr 1fr; }
+  .proof-section { padding: 36px 14px; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .co-footer { padding: 18px 14px; }
+  .foot-compliance { font-size: 11px; }
+  #mob-cta { display: none; }
+  #mob-cta.show { display: block; }
+}
+@media (max-width: 480px) {
+  .co-wrap { padding: 14px 10px 120px; }
+  .prod-confirm { padding: 22px 16px 18px; }
+  .card-head { padding: 18px 18px 14px; }
+  .card-price { padding: 14px 18px 12px; }
+  .price-big { font-size: 40px; }
+  .price-row { gap: 10px; }
+  .price-was { font-size: 14px; }
+  .price-badge { font-size: 9px; }
+  .card-form { padding: 14px 18px; }
+  .fi { font-size: 16px; }
+  .pay-btn { font-size: 12px; padding: 16px 14px; }
+  .card-methods { padding: 8px 18px 14px; flex-wrap: wrap; gap: 5px; }
+  .modules-grid { grid-template-columns: 1fr; }
+  .nav-brand { font-size: 10px; letter-spacing: 0.14em; }
+  .guar { padding: 14px 16px; }
+  .trust-row { padding: 11px 13px; }
+  .pc-sub { font-size: 14px; }
+  .faq-q { font-size: 14px; padding: 14px 18px; }
+  .co-footer { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 14px; }
+  .foot-links { gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-track"><div id="progress-fill"></div></div>
+<div class="amb amb1"></div>
+<div class="amb amb2"></div>
+
+<!-- ════ NAV ════ -->
+<nav class="co-nav">
+  <div></div>
+  <a href="checkout_v4.html" class="nav-brand">Persuasion Academy by RA</a>
+  <div class="nav-secure">
+    <svg viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="10" height="8" rx="1"/><path d="M4 5V3.5a2 2 0 014 0V5"/></svg>
+    Secure Checkout
+  </div>
+</nav>
+
+<!-- ════ TRUST BAR ════ -->
+<div class="steps-bar">
+  <div class="step done"><div class="step-num">✓</div>One-Time Payment</div>
+  <div class="step-line"></div>
+  <div class="step done"><div class="step-num">✓</div>No Subscription</div>
+  <div class="step-line"></div>
+  <div class="step done"><div class="step-num">✓</div>Instant Access</div>
+  <div class="step-line"></div>
+  <div class="step done"><div class="step-num">✓</div>24-Hour Refund Policy</div>
+</div>
+
+<!-- ════ MAIN WRAP ════ -->
+<div class="co-wrap">
+
+  <!-- ════ LEFT ════ -->
+  <div class="co-left">
+
+    <!-- Product confirmation -->
+    <div class="prod-confirm">
+      <div class="pc-tag">You're securing access to</div>
+      <div class="pc-title">Social Dynamics<br><em>Masterclass</em></div>
+      <p class="pc-sub">Most people are operating on social instinct — unexamined patterns they inherited, not principles they chose. This programme changes that. 13 structured modules built from 50+ peer-reviewed studies on exactly how influence, presence, and relationship dynamics actually work.</p>
+      <div class="pc-grid">
+        <div class="pc-item"><div class="pc-dot">◆</div><div class="pc-text"><strong>13 sequential modules</strong> — four phases, each building on the last</div></div>
+        <div class="pc-item"><div class="pc-dot">◆</div><div class="pc-text"><strong>50+ peer-reviewed sources</strong> — documented mechanisms, not opinion</div></div>
+        <div class="pc-item"><div class="pc-dot">◆</div><div class="pc-text"><strong>Applied exercises every chapter</strong> — built to produce real behavioural change</div></div>
+        <div class="pc-item"><div class="pc-dot">◆</div><div class="pc-text"><strong>Lifetime access</strong> — every device, forever</div></div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-strip">
+      <div class="ss"><div class="ss-n">13</div><div class="ss-l">Modules</div></div>
+      <div class="ss"><div class="ss-n">50+</div><div class="ss-l">Sources</div></div>
+      <div class="ss"><div class="ss-n">90</div><div class="ss-l">Day Programme</div></div>
+      <div class="ss"><div class="ss-n">∞</div><div class="ss-l">Lifetime Access</div></div>
+    </div>
+
+    <!-- How it works -->
+    <div class="how-block">
+      <div class="block-head"><div class="bh-line"></div><div class="bh-text">How The Programme Works</div></div>
+      <div class="how-cols">
+        <div class="how-col">
+          <div class="how-n">01</div>
+          <div class="how-lbl">The Science</div>
+          <p class="how-desc">Every chapter opens with the documented psychology behind the principle — so you understand the mechanism, not a surface method you'll abandon in a week.</p>
+        </div>
+        <div class="how-col">
+          <div class="how-n">02</div>
+          <div class="how-lbl">The Framework</div>
+          <p class="how-desc">Research becomes precise, actionable behaviour — clear frameworks for how to carry yourself, communicate, and occupy the position you want socially.</p>
+        </div>
+        <div class="how-col">
+          <div class="how-n">03</div>
+          <div class="how-lbl">The Exercises</div>
+          <p class="how-desc">Applied drills at the end of every chapter turn understanding into actual behavioural change. The 90-Day Protocol in Module 13 ties all of it into a structured plan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fit check -->
+    <div class="fit-block">
+      <div class="fit-header">Is This Right For You</div>
+      <div class="fit-cols">
+        <div class="fit-col">
+          <div class="fit-lbl yes">This is for you if</div>
+          <div class="fit-row"><div class="fit-icon" style="color:rgba(90,190,110,0.85);">✓</div><div class="fit-text">You want to understand why social dynamics work, not just imitate surface behaviour</div></div>
+          <div class="fit-row"><div class="fit-icon" style="color:rgba(90,190,110,0.85);">✓</div><div class="fit-text">You're done with advice not grounded in documented research</div></div>
+          <div class="fit-row"><div class="fit-icon" style="color:rgba(90,190,110,0.85);">✓</div><div class="fit-text">You believe social intelligence is learnable, not a fixed personality trait</div></div>
+          <div class="fit-row"><div class="fit-icon" style="color:rgba(90,190,110,0.85);">✓</div><div class="fit-text">You're ready to apply — not just consume passively and move on</div></div>
+        </div>
+        <div class="fit-col">
+          <div class="fit-lbl no">This is not for you if</div>
+          <div class="fit-row"><div class="fit-icon" style="color:rgba(200,75,55,0.75);">✕</div><div class="fit-text">You want quick hacks with no psychological foundation behind them</div></div>
+          <div class="fit-row"><div class="fit-icon" style="color:rgba(200,75,55,0.75);">✕</div><div class="fit-text">You're looking for passive content to consume without acting on it</div></div>
+          <div class="fit-row"><div class="fit-icon" style="color:rgba(200,75,55,0.75);">✕</div><div class="fit-text">You want results without understanding the underlying mechanism</div></div>
+          <div class="fit-row"><div class="fit-icon" style="color:rgba(200,75,55,0.75);">✕</div><div class="fit-text">You're comfortable with where your social standing currently is</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-wrap">
+      <div class="faq-head">Common Questions</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">What exactly am I getting? <span class="faq-icon">+</span></div>
+          <div class="faq-a">A complete 13-module digital programme covering social dynamics, personal influence, communication, and relationship intelligence. Each module includes a structured chapter grounded in peer-reviewed psychology, plus applied exercises. Instant access on any device, forever, the moment payment confirms.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How is this different from free content online? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Free content gives you scattered ideas. This is a sequential system — 13 modules across four phases, each building on the last, grounded in 50+ peer-reviewed studies. Built to produce real behavioural change over 90 days, not tips you read once and forget.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if it isn't what I expected? <span class="faq-icon">+</span></div>
+          <div class="faq-a">You have a full 24-hour refund window from the moment of purchase. One email to us is all it takes — no questions, no forms, no friction. Complete refund, no conditions.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is ₹999 the final price? <span class="faq-icon">+</span></div>
+          <div class="faq-a">₹999 is the Founding Member price during initial rollout only. Once this window closes, the price increases permanently. One payment. Lifetime access to everything inside.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do I access after payment? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Access credentials are emailed to you within 60 seconds of payment confirmation. Works immediately on any device — phone, laptop, or tablet.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is my payment secure? <span class="faq-icon">+</span></div>
+          <div class="faq-a">All payments are processed through a certified payment gateway with bank-grade SSL encryption. We never store your card details. UPI, cards, net banking, wallets, and EMI are all supported.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal -->
+    <div class="legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="refund.html">Refund Policy</a>
+      <a href="mailto:Persuasionacademybyra@gmail.com">Persuasionacademybyra@gmail.com</a>
+    </div>
+
+  </div><!-- /co-left -->
+
+  <!-- ════ RIGHT ════ -->
+  <div class="co-right">
+    <div class="co-right-sticky">
+
+    <div class="pay-card" id="pay-card">
+      <div class="card-head">
+        <div class="card-tag">Digital Programme · Instant Access</div>
+        <div class="card-row">
+          <div class="card-ico">◈</div>
+          <div>
+            <div class="card-name">Social Dynamics Masterclass</div>
+            <div class="card-sub">Persuasion Academy by RA · 13 Modules · Lifetime Access</div>
+          </div>
+        </div>
+        <div class="card-includes">
+          <div class="ci-row"><span class="ci-check">✓</span> 13 modules across 4 structured phases</div>
+          <div class="ci-row"><span class="ci-check">✓</span> Applied exercises every chapter</div>
+          <div class="ci-row"><span class="ci-check">✓</span> 90-Day Application Protocol</div>
+          <div class="ci-row"><span class="ci-check">✓</span> Lifetime access on any device</div>
+        </div>
+      </div>
+
+      <div class="card-price">
+        <div class="price-row">
+          <div class="price-big"><sup>₹</sup>999</div>
+          <div class="price-was">₹1,999</div>
+        </div>
+        <div class="price-badge">Save ₹1,000 — Founding Member Price</div>
+        <div class="price-note">One-time · No subscription · No hidden charges</div>
+      </div>
+
+      <div class="card-form">
+        <div class="fg">
+          <label class="fl" for="f-name">Full Name</label>
+          <input type="text" class="fi" id="f-name" placeholder="Your full name" autocomplete="name" inputmode="text">
+        </div>
+        <div class="fg">
+          <label class="fl" for="f-email">Email Address</label>
+          <input type="email" class="fi" id="f-email" placeholder="you@example.com" autocomplete="email" inputmode="email">
+        </div>
+        <div class="fg">
+          <label class="fl" for="f-phone">Phone Number</label>
+          <input type="tel" class="fi" id="f-phone" placeholder="+91 98765 43210" autocomplete="tel" inputmode="tel">
+        </div>
+        <button class="pay-btn" onclick="handlePayment()">
+          Complete Payment &nbsp;→&nbsp; ₹999
+        </button>
+        <p class="access-note">Credentials emailed within 60 seconds of payment.</p>
+      </div>
+
+      <div class="card-methods">
+        <span class="meth">UPI</span><span class="meth-dot">·</span>
+        <span class="meth">Cards</span><span class="meth-dot">·</span>
+        <span class="meth">Net Banking</span><span class="meth-dot">·</span>
+        <span class="meth">Wallets</span><span class="meth-dot">·</span>
+        <span class="meth">EMI</span>
+      </div>
+    </div>
+
+    <div class="trust-stack">
+      <div class="trust-row">
+        <div class="trust-ico">🔒</div>
+        <div class="trust-txt"><strong>256-bit SSL Encryption</strong> — Bank-grade security on every transaction. Your data is never stored.</div>
+      </div>
+      <div class="trust-row">
+        <div class="trust-ico">⚡</div>
+        <div class="trust-txt"><strong>Instant Access</strong> — Credentials delivered to your inbox within 60 seconds of confirmation.</div>
+      </div>
+    </div>
+
+    <div class="guar">
+      <div class="g-ico">🛡</div>
+      <div>
+        <div class="g-title">24-Hour Money-Back Guarantee</div>
+        <div class="g-body">Not what you expected? Email us within <strong>24 hours</strong> for a complete refund. No questions, no forms.</div>
+      </div>
+    </div>
+
+    </div><!-- /co-right-sticky -->
+  </div><!-- /co-right -->
+
+</div><!-- /co-wrap -->
+
+<!-- ════ PROGRAMME OVERVIEW ════ -->
+<section class="prog-section" id="programme">
+  <div class="prog-inner">
+    <div class="sec-eye"><div class="sec-eye-line"></div><div class="sec-eye-text">Programme Overview</div></div>
+    <div class="sec-hl">13 modules. Four phases.<br><em>One complete system.</em></div>
+    <div class="modules-grid">
+      <div class="mod-card">
+        <div class="mod-phase">Phase 01 — Foundation</div>
+        <div class="mod-title">The Psychology of<br><em>Social Value</em></div>
+        <p class="mod-desc">Why some people are immediately perceived as high-value in any room — and the documented psychological mechanisms that create that perception.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 01 — Foundation</div>
+        <div class="mod-title">Presence Before<br><em>Words</em></div>
+        <p class="mod-desc">How you are read before you speak — posture, eye contact, spatial behaviour, and the non-verbal signals that set every interaction's tone from the first moment.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 01 — Foundation</div>
+        <div class="mod-title">The Frame<br><em>Principle</em></div>
+        <p class="mod-desc">What frame is, who holds it in every interaction, and why frame control is the single most impactful dynamic in social and personal relationships.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 02 — Dynamics</div>
+        <div class="mod-title">The Investment<br><em>Asymmetry</em></div>
+        <p class="mod-desc">Why investing more often produces less — the psychology of perceived scarcity, over-availability, and how effort is misread as low social value.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 02 — Dynamics</div>
+        <div class="mod-title">Tension &amp;<br><em>Uncertainty</em></div>
+        <p class="mod-desc">The documented role of psychological tension in deepening connection — and how to create it without manufacturing conflict or instability.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 02 — Dynamics</div>
+        <div class="mod-title">Boundaries as<br><em>Identity</em></div>
+        <p class="mod-desc">How clear personal limits, communicated correctly, increase rather than decrease the depth and quality of your relationships.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 03 — Communication</div>
+        <div class="mod-title">Conversational<br><em>Architecture</em></div>
+        <p class="mod-desc">How to structure conversations that build genuine rapport — pacing, depth escalation, and the moments most people miss or rush past.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 03 — Communication</div>
+        <div class="mod-title">Wit, Precision,<br><em>and Silence</em></div>
+        <p class="mod-desc">The strategic use of humour, considered pauses, and selective disclosure as instruments of social influence and personal magnetism.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 03 — Communication</div>
+        <div class="mod-title">Reading the<br><em>Unspoken</em></div>
+        <p class="mod-desc">Decoding subtext, emotional temperature, and the signals people send when they lack the vocabulary to send them directly.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 04 — Positioning</div>
+        <div class="mod-title">Social Circle<br><em>Architecture</em></div>
+        <p class="mod-desc">How to build a social environment where you occupy a natural position of value — without performance, status-seeking, or constant maintenance effort.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 04 — Positioning</div>
+        <div class="mod-title">Consistency &amp;<br><em>Long-Term Standing</em></div>
+        <p class="mod-desc">The psychology of sustained credibility — and why most people's social standing erodes over time despite a strong start.</p>
+      </div>
+      <div class="mod-card">
+        <div class="mod-phase">Phase 04 — Positioning</div>
+        <div class="mod-title">The Identity<br><em>Integration</em></div>
+        <p class="mod-desc">Making these principles automatic — how identity-level integration ensures the programme compounds without requiring conscious maintenance.</p>
+      </div>
+      <div class="mod-card mod-last">
+        <div class="mod-phase">Capstone</div>
+        <div class="mod-title">The 90-Day<br><em>Application Protocol</em></div>
+        <p class="mod-desc">A structured, week-by-week guide for applying all 12 preceding modules — so the programme produces measurable change, not just understanding that fades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer class="co-footer">
+  <div class="foot-brand">Persuasion Academy by RA</div>
+  <div class="foot-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="refund.html">Refund Policy</a>
+  </div>
+  <div class="foot-copy">© 2025 Persuasion Academy by RA. All rights reserved.</div>
+  <div class="foot-compliance">Digital product. Delivered electronically. Pricing in INR. By completing your purchase you agree to our <a href="terms.html">Terms &amp; Conditions</a> and <a href="refund.html">Refund Policy</a>. For support: <a href="mailto:Persuasionacademybyra@gmail.com">Persuasionacademybyra@gmail.com</a></div>
+</footer>
+
+<!-- ════ MOBILE CTA ════ -->
+<div id="mob-cta">
+  <a href="#pay-card">Complete Payment — ₹999 →</a>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+// Progress bar
+const fill = document.getElementById('progress-fill');
+function updateProgress() {
+  const st = window.scrollY || document.documentElement.scrollTop;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if (fill) fill.style.width = (dh > 0 ? (st / dh) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+// Mobile CTA visibility
+const mobCta = document.getElementById('mob-cta');
+const payCard = document.getElementById('pay-card');
+if (mobCta && payCard) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => mobCta.classList.toggle('show', !e.isIntersecting));
+  }, { threshold: 0.1 });
+  obs.observe(payCard);
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open'); i.querySelector('.faq-icon').textContent = '+';
+    });
+    if (!isOpen) { item.classList.add('open'); item.querySelector('.faq-icon').textContent = '×'; }
+  });
+});
+
+// bfcache
+window.addEventListener('pageshow', e => { if (e.persisted) window.location.reload(); });
+window.addEventListener('unload', () => {});
+
+// Razorpay
+function handlePayment() {
+  const name  = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  if (!name)  { alert('Please enter your full name.'); document.getElementById('f-name').focus(); return; }
+  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); document.getElementById('f-email').focus(); return; }
+  const options = {
+    key: 'YOUR_RAZORPAY_KEY_ID',
+    amount: 99900, currency: 'INR',
+    name: 'Persuasion Academy by RA',
+    description: 'Social Dynamics Masterclass — Lifetime Access',
+    image: '',
+    prefill: { name, email, contact: phone },
+    notes: { product: 'Social Dynamics Masterclass' },
+    theme: { color: '#C9A84C' },
+    handler: function(response) { window.location.href = 'success.html?payment_id=' + response.razorpay_payment_id; },
+    modal: { ondismiss: function() {} }
+  };
+  new Razorpay(options).open();
+}
+</script>
+</body>
+</html>
